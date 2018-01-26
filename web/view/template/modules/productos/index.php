@@ -10,8 +10,8 @@
       </div>
     </div>
     <div class="row multi-columns-row">
-      <?php     foreach ($data['productos'] as $value) {
-                    $url_imagen = URL_GAL.'productos/images/IM_'.$value['Imagen'];
+      <?php   foreach ($data['productos'] as $value) {
+                  $url_imagen = URL_GAL.'productos/images/IM_'.$value['Imagen'];
       ?>
       <div class="col-sm-4 col-md-4 col-lg-4">
         <!-- SHOP ITEM-->
@@ -26,7 +26,7 @@
         <!-- END SHOP ITEM-->
       </div>
       <?php
-                }
+              }
       ?>
     </div>
   </div>

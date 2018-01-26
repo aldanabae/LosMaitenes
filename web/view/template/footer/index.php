@@ -12,6 +12,7 @@
       <!-- WIDGET-->
       <div class="col-md-4">
         <div class="widget">
+          <h5 class="widget-title"></h5>
           <ul class="list-unstyled">
             <li>Guardia Vieja 1040, Vistalba.</li>
             <li>Luján de Cuyo, CP 5507</li>
@@ -31,6 +32,7 @@
             <li><a href="#">Nuestra Finca</a></li>
             <li><a href="<?php echo URL_WEB.'productos'; ?>">Productos</a></li>
             <li><a href="<?php echo URL_WEB.'distribuidores'; ?>">Distribuidores</a></li>
+            <li><a href="<?php echo URL_WEB.'galeria'; ?>">Galeria</a></li>
             <li><a href="<?php echo URL_WEB.'contacto'; ?>">Contacto</a></li>
           </ul>
         </div>
