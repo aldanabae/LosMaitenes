@@ -11,7 +11,11 @@ class homeModel extends Model {
   }
 
   public function getSeccionID($id) {
-    return $this->where(array('table' => 'seccion', 'where' => "ID='" . $id . "'", 'limit' => 1));
+    return $this->all(array('table' => 'seccion', 'where' => "ID='" . $id . "'", 'limit' => 1));
+  }
+
+  public function getParrafos($tabla, $id) {
+    return $this->all(array('table' => 'paragraph', 'where' => "Tabla='" . $tabla . "' AND TablaID='" . $id . "'"));
   }
 
   public function getUser($id) {
@@ -71,6 +75,10 @@ class homeModel extends Model {
     return $this->all(array('table' => 'productos', 'where' => "Publico='1'", 'order'=>'Posicion'));
   }
 
+  public function getDistribuidores() {
+    return $this->all(array('table' => 'distribuidores', 'where' => "Publico='1'", 'order'=>'Posicion'));
+  }
+
   public function getServicios() {
     return $this->all(array('table' => 'servicios', 'where' => "Publico='1'", 'order'=>'Posicion'));
   }
@@ -123,10 +131,6 @@ class homeModel extends Model {
 
   public function getMeta($tabla, $id) {
     return $this->where(array('table' => 'meta', 'where' => "Tabla='" . $tabla . "' AND TablaID='" . $id . "'", 'limit' => 1));
-  }
-
-  public function getParrafos($tabla, $id) {
-    return $this->all(array('table' => 'paragraph', 'where' => "Tabla='" . $tabla . "' AND TablaID='" . $id . "'"));
   }
 
   public function getGaleria($tabla, $id) {

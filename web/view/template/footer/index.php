@@ -4,7 +4,7 @@
     <div class="row">
       <!-- WIDGET-->
       <div class="col-md-4">
-        <div class="widget"><img src="<?php echo URL_IMG; ?>maitenes-logo.png" alt=""><br/><br/>
+        <div class="widget"><img src="<?php echo URL_IMG; ?>maitenes-logoF.png" alt=""><br/><br/>
           <p>Obtenemos de este privilegiado suelo los mejores elementos, a partir de los cuales elaboramos con pasión los productos que ofrecemos.</p>
         </div>
       </div>
@@ -28,8 +28,8 @@
         <div class="widget widget-links">
           <h5 class="widget-title">Mapa del Sitio</h5>
           <ul>
-            <li><a href="<?php echo URL_WEB.'nosotros'; ?>">Nosotros</a></li>
-            <li><a href="#">Nuestra Finca</a></li>
+            <li><a href="<?php echo URL_WEB.'seccion/'; ?>nosotros">Nosotros</a></li>
+            <li><a href="<?php echo URL_WEB.'seccion/'; ?>vinedos">Nuestra Finca</a></li>
             <li><a href="<?php echo URL_WEB.'productos'; ?>">Productos</a></li>
             <li><a href="<?php echo URL_WEB.'distribuidores'; ?>">Distribuidores</a></li>
             <li><a href="<?php echo URL_WEB.'galeria'; ?>">Galeria</a></li>

@@ -19,56 +19,28 @@
     </section>
     <!-- END HERO-->
     <section class="module">
-                <div class="container">
-    <div class="row">
-        <!-- CLIENTS-->
-        <div class="team-item col-sm-3">
-          <a href="#" class="client"><img src="<?php echo URL_IMG; ?>clients/cepajes.png" alt=""></a>
-          <div class="team-inner">
-              <h5>Córdoba</h5><span>Master Chef</span>
-              <div>
-                <a href="shop-product.html">www.papapapapa.com.ar</a>
-              </div>                      
-          </div>
+        <div class="container">
+            <div class="row">
+                <!-- CLIENTS-->
+                <?php   foreach ($data['distribuidores'] as $dist) {
+                            $url_imagen = URL_GAL.'distribuidores/images/IM_'.$dist['Imagen'];
+                ?>
+                <div class="team-item col-sm-3">
+                    <a href="#" class="client"><img src="<?php echo $url_imagen?>" alt=""></a>
+                    <div class="team-inner">
+                        <h5><?php echo $dist['Ciudad']; ?></h5><span><?php echo $dist['Nombre']; ?></span>
+                        <div>
+                            <a href="<?php echo $dist['Website']; ?>">Sitio Web</a>
+                        </div>                      
+                    </div>
+                </div>
+                <?php
+                        }
+                ?>
+                <!-- END CLIENTS-->
+            </div>
         </div>
-        <div class="team-item col-sm-3">
-          <a href="#" class="client"><img src="<?php echo URL_IMG; ?>clients/wineLovers.png" alt=""></a>
-          <div class="team-inner">
-              <h5>Santa Fé</h5><span>Master Chef</span>
-              <div>
-                <a href="shop-product.html">www.papapapapa.com.ar</a>
-              </div>
-          </div>
-        </div>
-        <div class="team-item col-sm-3">
-          <a href="#" class="client"><img src="<?php echo URL_IMG; ?>clients/dockVinos.jpg" alt=""></a>
-          <div class="team-inner">
-              <h5>Brasil</h5><span>Master Chef</span>
-              <div>
-                <a href="shop-product.html">www.papapapapa.com.ar</a>
-              </div>
-          </div>
-        </div>
-        <div class="team-item col-sm-3">
-          <a href="#" class="client"><img src="<?php echo URL_IMG; ?>clients/quebradaSol.jpg" alt=""></a>
-          <div class="team-inner">
-              <h5>México</h5><span>Master Chef</span>
-              <div>
-                <a href="shop-product.html">www.papapapapa.com.ar</a>
-              </div>
-          </div>
-        </div>
-        <!-- END CLIENTS-->
-    </div>
-     </div>
-            </section>
-
-
-    <!-- TESTIMONIALS-->
-   <!--  <section data-background="<?php echo URL_IMG; ?>IMG_0844.jpg" class="module color-white parallax bg-black-alfa-30">
-    </section> -->
-    <!-- END TESTIMONIALS-->
-
+    </section>
 </div>
 <!-- END WRAPPER-->
 

@@ -18,7 +18,14 @@
     <div class="row-gallery">     
         <div class="gallery">
             <?php
-                $efectos = array("dinner", "lunch tall", "breakfast", "lunch large", "brunch", "", "lunch large", "breakfast", "breakfast", "lunch tall", "brunch", "breakfast");
+                $efectos = array("dinner", "lunch tall", "breakfast", "lunch large", "brunch", "", 
+                                    "lunch large", "breakfast", "breakfast", "lunch tall", "brunch", "breakfast",
+                                    "breakfast", "lunch tall", "lunch large", "breakfast", "brunch", "breakfast",
+                                    "breakfast", "lunch large", "breakfast", "lunch tall", "brunch", "breakfast",
+                                    "dinner", "lunch tall", "breakfast", "lunch large", "brunch", "", 
+                                    "lunch large", "breakfast", "breakfast", "lunch tall", "brunch", "breakfast",
+                                    "breakfast", "lunch tall", "lunch large", "breakfast", "brunch", "breakfast",
+                                    "breakfast", "lunch large", "breakfast", "lunch tall", "brunch", "breakfast");
                 $i = 0;
 
                 foreach ($data['galeria']['fotos'] as $item) :

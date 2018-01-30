@@ -13,8 +13,8 @@
             <div class="row">
               <div class="col-sm-12 text-center">
                 <h1 class="m-0"><?php echo $item['Titulo']; ?></h1>
-                <h2><?php echo $item['Descripcion']; ?></h2>
-                <!-- <p class="lead m-b-40">Build beautiful, contemporary sites in just moments <br/>with Risotto template and SCSS.</p> -->
+                <h3><?php echo $item['Descripcion']; ?></h3>
+                <p class="lead m-b-40"></p>
                 <!-- <a href="#reservation" class="btn btn-dark smoothscroll">Saber más</a> -->
               </div>
             </div>

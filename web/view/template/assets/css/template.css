@@ -1753,10 +1753,10 @@ span.box1 {
   height: 100vh;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 600px) {
   .module-hero {
     height: auto;
-    padding: 240px 0;
+    padding: 80px 0;
   }
 }
 

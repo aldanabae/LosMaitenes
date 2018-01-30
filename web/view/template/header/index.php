@@ -62,7 +62,7 @@ if (isset($data['meta']) && count($data['meta']) > 0) {
         <!-- LOGO-->
         <div class="inner-header">
           <a href="<?php echo URL_WEB; ?>" class="inner-brand">
-            <img src="<?php echo URL_IMG; ?>maitenes-logo.png" alt="">
+            <img src="<?php echo URL_IMG; ?>maitenes-logoH.png" alt="">
           </a>
         </div>
         <!-- MENU-->
@@ -74,10 +74,10 @@ if (isset($data['meta']) && count($data['meta']) > 0) {
                 <li class="has-submenu"><a href="#">Quienes Somos</a>
                     <ul class="submenu">
                         <li class="has-submenu">
-                          <a href="<?php echo URL_WEB.'nosotros'; ?>">Nosotros</a>
+                          <a href="<?php echo URL_WEB.'seccion/'; ?>nosotros">Nosotros</a>
                         </li>
                         <li class="has-submenu">
-                          <a href="<?php echo URL_WEB.'viniedos'; ?>">Nuestros Viñedos</a>
+                          <a href="<?php echo URL_WEB.'seccion/'; ?>vinedos">Nuestra Finca</a>
                         </li>
                     </ul>
                 </li>

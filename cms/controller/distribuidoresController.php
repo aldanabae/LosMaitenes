@@ -1,6 +1,6 @@
 <?php
 
-class banner_topController extends Controller {
+class distribuidoresController extends Controller {
 
   private $_wimage;
   private $_himage;
@@ -12,13 +12,13 @@ class banner_topController extends Controller {
 
   public function __construct() {
     parent::__construct();
- 
+
     $this->initialize();
     $this->_tabla = $this->_route['controller'];
     $this->_model = Load::model($this->_tabla);
-    $this->_wimage = 1920;
-    $this->_himage = 1280;
-    $this->_wthumb = 200;
+    $this->_wimage = 180;
+    $this->_himage = 180;
+    $this->_wthumb = 150;
     $this->_hthumb = 150;
   }
 
@@ -27,22 +27,22 @@ class banner_topController extends Controller {
   }
 
   public function listar($type = 1) {
-    $data['title'] = 'Listando Banners';
+    $data['title'] = 'Listando Distribuidores';
     $data['tabla'] = $this->_tabla;
     $data['type'] = $type;
 
-    $this->getBreadcrumb('Banners', 'listar');
+    $this->getBreadcrumb('Distribuidores', 'listar');
 
     if (Validator::validateInteger('listar', true) == 1) {
       $opt = Validator::sanitizeInteger('accion', true);
       $ids = $_POST['selected'];
 
-      ($opt == 4) ? $this->_model->deleteBanners($ids) : $this->_model->updateBanners($opt, $ids);
+      ($opt == 4) ? $this->_model->deleteDistribuidores($ids) : $this->_model->updateDistribuidores($opt, $ids);
     }
 
     $data['base_url'] = $this->base_url;
     $data['heads'][] = array('title' => 'Titulo', 'sort' => 'sisort', 'align' => 'center');
-    $data['heads'][] = array('title' => 'Descripcion', 'sort' => 'sisort', 'align' => 'left');
+    $data['heads'][] = array('title' => 'Ciudad', 'sort' => 'sisort', 'align' => 'left');
     $data['heads'][] = array('title' => 'Estado', 'sort' => 'nosort center', 'align' => 'center');
 
     $this->_view->assign('data', $data);
@@ -54,39 +54,39 @@ class banner_topController extends Controller {
     $data['tabla'] = $this->_tabla;
     $data['base_url'] = $this->base_url;
 
-    $num = ($this->_model->countBanners() > 0) ? ($this->_model->countBanners() + 1) : 1;
-    $this->getBreadcrumb('Banners', 'listar');
+    $this->getBreadcrumb('Distribuidores', 'listar');
 
     if (Validator::validateInteger('actualizar', true) == 1) {
       $data[$this->_tabla] = $_POST[$this->_tabla];
       $fields = $_POST[$this->_tabla];
-      $titulo = Validator::sanitizeString($fields['Titulo']);
+      $titulo = Validator::sanitizeString($fields['Nombre']);
 
       if (empty($titulo)) {
-        $data['alert'] = $this->alertMessage('danger', 'Debe ingresar el T&iacute;tulo del Banner');
+        $data['alert'] = $this->alertMessage('danger', 'Debe ingresar el Nombre del Distribuidor');
         $this->_view->assign('data', $data);
         $this->_view->render();
         exit;
       }
 
-      $fields['Posicion'] = $num;
-      $id = $this->_model->updateBanner($fields);
+      $id = $this->_model->updateDistribuidor($fields);
       Url::redirect($this->base_url . 'listar');
     }
 
-    $data[$this->_tabla]['Titulo'] = 'Banner' . $num;
     $data['selectpos'] = $this->_model->getSelectPos();
-
+    
     $this->_view->assign('data', $data);
     $this->_view->render();
   }
 
   public function editar($id) {
-    if (!Validator::validateInteger($id))
+    if (!Validator::validateInteger($id)) {
       Url::redirect();
-    if (!$this->_model->getBanner($id))
+    }
+    if (!$this->_model->getDistribuidor($id)) {
       Url::redirect();
-    $this->getBreadcrumb('Banners', 'listar');
+    }
+
+    $this->getBreadcrumb('Distribuidores', 'listar');
 
     $data['title'] = 'Editar Registro';
     $data['tabla'] = $this->_tabla;
@@ -95,30 +95,31 @@ class banner_topController extends Controller {
     if (Validator::validateInteger('actualizar', true) == 1) {
       $data[$this->_tabla] = $_POST[$this->_tabla];
       $fields = $_POST[$this->_tabla];
-      $titulo = Validator::sanitizeString($fields['Titulo']);
+      $titulo = Validator::sanitizeString($fields['Nombre']);
 
       if (empty($titulo)) {
-        $data['alert'] = $this->alertMessage('danger', 'Debe ingresar el T&iacute;tulo del Banner');
+        $data['alert'] = $this->alertMessage('danger', 'Debe ingresar el Nombre del Distribuidor');
         $this->_view->assign('data', $data);
         $this->_view->render();
         exit;
       }
 
       $fields['ID'] = $id;
-      $this->_model->updateBanner($fields);
+      $this->_model->updateDistribuidor($fields);
 
       Url::redirect($this->base_url . 'listar');
     }
 
-    $data[$this->_tabla] = $this->_model->getBanner($id);
+    $data[$this->_tabla] = $this->_model->getDistribuidor($id);
     $data['selectpos'] = $this->_model->getSelectPos($data[$this->_tabla]);
+    
     $this->_view->assign('data', $data);
     $this->_view->render();
   }
 
   public function filter($type = '') {
     $type = (!empty($type)) ? "Publico='" . $type . "'" : '';
-    $cols = array('ID', 'Titulo', 'Descripcion', 'Publico');
+    $cols = array('ID', 'Nombre', 'Ciudad', 'Publico');
 
     $grid = new DataTables($this->_tabla, $cols, $type, array($this, 'setRowsExtra'), array($this, 'addActions'), 'Posicion'
     );
@@ -200,5 +201,3 @@ class banner_topController extends Controller {
   }
 
 }
-
-?>

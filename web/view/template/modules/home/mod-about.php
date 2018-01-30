@@ -2,7 +2,6 @@
 <section class="module">
   <div class="container">
     <?php   foreach ($data['tabla_sec'] as $about) {
-              if ($about['ID'] == 1){
     ?>
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3">
@@ -25,7 +24,7 @@
       </div>
       <?php   } ?>
     </div>
-    <?php     }              
+    <?php                  
             }
     ?>
   </div>

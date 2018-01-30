@@ -11,13 +11,10 @@ class homeController extends Controller {
   public function index() {
     $data['title'] = 'Home';
     $data['sliders'] = $this->_index->getSliders();
-    $data['tabla_sec'] = $this->_index->getSecciones();
-    foreach ($data['tabla_sec'] as $about){
-      $id = $about['ID'];
-      $tabla = "seccion";
-    }
-    $data['parrafos'] = $this->_index->getParrafos($tabla, $id);
+    $data['tabla_sec'] = $this->_index->getSeccionID(1);
+    $data['parrafos'] = $this->_index->getParrafos('seccion', 1);
     $data['productos'] = $this->_index->getProductos();
+    $data['distribuidores'] = $this->_index->getDistribuidores();
     $data['galeria'] = $this->_index->getGaleriaFotos(1);
 
     $data = array_merge($data, $this->getModules());
@@ -36,17 +33,15 @@ class homeController extends Controller {
          Url::redirect('error');
       }
 
-      if(!empty($info['TablaSec'])) {
-        $data['tabla_sec'] = $this->_index->getTablaSec($info['TablaSec']);
-      }
-
       $data['title'] = $data[$data['tabla']]['Titulo'];
       $data['meta'] = $this->_index->getMeta($data['tabla'], $data[$data['tabla']]['ID']);
       $data['parrafos'] = $this->_index->getParrafos($data['tabla'], $data[$data['tabla']]['ID']);
+
     } else {
       Url::redirect('error');
     }
 
+    $data['url'] = $url;
     $data = array_merge($data, $this->getModules());
     $this->_view->assign('data', $data);
     $this->_view->render($data['tabla']);
