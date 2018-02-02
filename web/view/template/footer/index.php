@@ -69,7 +69,7 @@
 </div>
 <!-- END WRAPPER-->
 <!-- SCRIPTS-->
-<script src="http://maps.googleapis.com/maps/api/js?v=3"></script>
+<!-- <script src="http://maps.googleapis.com/maps/api/js?v=3"></script> -->
 <script src="<?php echo URL_JS; ?>jquery-2.2.3.min.js"></script>
 <script src="<?php echo URL_JS; ?>bootstrap/js/bootstrap.min.js"></script>
 <script src="<?php echo URL_JS; ?>plugins.min.js"></script>

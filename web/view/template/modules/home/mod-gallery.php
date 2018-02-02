@@ -1,5 +1,5 @@
 <!-- GALLERY-->
-<section id="gallery" class="module p-b-0">
+<section class="module p-b-0">
     <?php 
         $info = $data['galeria']['info'];
     ?>

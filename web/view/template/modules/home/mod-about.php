@@ -1,5 +1,5 @@
 <!-- ABOUT-->
-<section class="module">
+<section id="about" class="module">
   <div class="container">
     <?php   foreach ($data['tabla_sec'] as $about) {
     ?>

@@ -27,7 +27,7 @@ if (isset($data['meta']) && count($data['meta']) > 0) {
     <link rel="apple-touch-icon" sizes="72x72" href="<?php echo URL_IMG; ?>apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="<?php echo URL_IMG; ?>apple-touch-icon-114x114.png">
     <!-- Web Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Suranna" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet" type="text/css">
     <!-- Bootstrap core CSS-->
     <link href="<?php echo URL_JS; ?>bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -69,7 +69,7 @@ if (isset($data['meta']) && count($data['meta']) > 0) {
         <div class="inner-navigation collapse">
           <div class="inner-navigation-inline">
             <div class="inner-nav">
-              <ul>
+              <ul class="onepage-nav">
                 <li><a href="<?php echo URL_WEB; ?>">Home</a></li>
                 <li class="has-submenu"><a href="#">Quienes Somos</a>
                     <ul class="submenu">

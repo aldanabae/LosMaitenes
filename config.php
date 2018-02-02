@@ -58,6 +58,7 @@ define('DB_DRIVER', 'mysql');
 
 //EMAILS DE TESTEO
 define('ACTIVE_EMAIL', true);
-define('EMAIL_WEBMASTER', 'info@tmsgroup.com.ar');
+define('EMAIL_WEBMASTER', 'aldana.baeza@tmsgroup.com');
+// define('EMAIL_WEBMASTER', 'info@losmaitenes.net');
 define('EMAIL_TESTER', 'ocastillo77@outlook.com');
 

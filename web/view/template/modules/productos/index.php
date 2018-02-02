@@ -20,7 +20,7 @@
             <div class="shop-item-hidden"><a href="<?php echo URL_WEB.$value['URL']; ?>" class="btn btn-block btn-dark">Ver Ficha Técnica</a></div>
           </div>
           <div class="text-center">
-            <h5><a href="shop-product.html"><?php echo $value['Nombre']; ?></a></h5>
+            <h6><a href="shop-product.html"><?php echo $value['Nombre']; ?></a></h6>
           </div>
         </div>
         <!-- END SHOP ITEM-->

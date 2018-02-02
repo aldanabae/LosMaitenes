@@ -12,8 +12,8 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-12 text-center">
-                <h1 class="m-0"><?php echo $item['Titulo']; ?></h1>
-                <h3><?php echo $item['Descripcion']; ?></h3>
+                <h1 class="m-0" style="margin-bottom: 20px !important;"><?php echo $item['Titulo']; ?></h1>
+                <h4><?php echo $item['Descripcion']; ?></h4>
                 <p class="lead m-b-40"></p>
                 <!-- <a href="#reservation" class="btn btn-dark smoothscroll">Saber más</a> -->
               </div>
